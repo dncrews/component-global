@@ -4,10 +4,9 @@
   "description": "Wraps components in a closure to only attach to global scope",
   "main": "bin/closurize",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "component-global": "bin/closurize"
   },
-  "repository": "",
+  "repository": "https://github.com/dncrews/component-global",
   "author": "Dan Crews <crewsd@gmail.com>",
   "license": "MIT",
   "dependencies": {
