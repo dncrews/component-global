@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+/*global Buffer:false,clearInterval:false,clearTimeout:false,console:false,exports:false,global:false,module:false,process:false,querystring:false,require:false,setInterval:false,setTimeout:false,__filename:false,__dirname:false */
+'use strict';
+
+var program = require('commander')
+  , path = require('path')
+  , fs = require('fs')
+  , exists = fs.existsSync || path.existsSync;
+
+program.option('-f --file <filename>', 'filename to wrap');
+
+program.on('--help', function() {
+  console.log(' Examples:');
+  console.log();
+  console.log('   # wrap file $');
+  console.log('   $ component-global -f $');
+  console.log();
+});
+
+program.parse(process.argv);
+
+var filename = program.file;
+
+// Only for js files
+if (filename.split('.').pop() !== 'js') return false;
+
+// Only for real files
+if (! exists(filename)) return false;
+
+var js = [
+  ';(function() {',
+  '  var exports, define;',
+  fs.readFileSync(filename).toString(),
+  '})();'
+];
+
+
+fs.writeFile(filename, js.join('\n'));

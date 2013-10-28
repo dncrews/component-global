@@ -1,0 +1,16 @@
+{
+  "name": "component-global",
+  "version": "1.0.0",
+  "description": "Wraps components in a closure to only attach to global scope",
+  "main": "bin/closurize",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "component-global": "bin/closurize"
+  },
+  "repository": "",
+  "author": "Dan Crews <crewsd@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "~2.0.0"
+  }
+}
