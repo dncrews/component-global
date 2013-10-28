@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Wraps components in a closure to only attach to global scope",
   "main": "bin/closurize",
-  "scripts": {
+  "bin": {
     "component-global": "bin/closurize"
   },
   "repository": "https://github.com/dncrews/component-global",
