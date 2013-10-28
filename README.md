@@ -2,8 +2,9 @@ Package for wrapping components in a closure to prevent Common.js loaders from i
 
 ## Installation
 
-`npm install -g component-global`
+From within an existing node app:
+`npm install component-global`
 
 ## Usage
 
-`component-global -f ./file.js`
+`./node_modules/.bin/component-global -f ./file.js`

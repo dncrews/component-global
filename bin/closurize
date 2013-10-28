@@ -20,7 +20,7 @@ program.on('--help', function() {
 
 program.parse(process.argv);
 
-var filename = program.file;
+var filename = path.join(process.cwd(), program.file);
 
 // Only for js files
 if (filename.split('.').pop() !== 'js') return false;
@@ -34,6 +34,5 @@ var js = [
   fs.readFileSync(filename).toString(),
   '})();'
 ];
-
 
 fs.writeFile(filename, js.join('\n'));
